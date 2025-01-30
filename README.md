@@ -10,7 +10,7 @@ In the "Codes" folder are "the most important" codes I used to obtain the result
 
 ################################################################################
 
-To download the data from the lcst, we need to have access to the vnc of the instrument. To do this, you need to talk to Esteban Donoso (edonoso@udec.cl). Once you are in the vnc-viewer, you can send the files to your notebook from "home/pi/data/file.txt". 
+To download the data from the lcst, we need to have access to the vnc of the instrument. To do this, you need to talk to Esteban Donoso (edonoso@udec.cl). Once you are in the vnc-viewer, you can transfer the files to your notebook from "home/pi/data/file.txt". 
 
 ![vnc1](https://github.com/user-attachments/assets/8b00d9c3-a73c-440e-a85f-c57ed5dfe443)
 
