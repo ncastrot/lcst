@@ -14,7 +14,7 @@ To download the data from the lcst, we need to have access to the vnc of the ins
 
 ![vnc1](https://github.com/user-attachments/assets/8b00d9c3-a73c-440e-a85f-c57ed5dfe443)
 
-To download the data from the apex radiometer, you need to go to http://archive.eso.org/wdb/wdb/eso/meteo_apex/form. In this, yo have to set the dates in which you want the data, and then select the output: in particular, the pwv.
+To download the data from the apex radiometer, you need to go to http://archive.eso.org/wdb/wdb/eso/meteo_apex/form. In this, you have to set the dates in which you want the data, and then select the output: in particular, the pwv.
 
 ![apex1](https://github.com/user-attachments/assets/82d8718e-e1ed-4040-8e6b-4a244942e518)
 
