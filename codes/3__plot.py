@@ -9,12 +9,14 @@ import matplotlib.pyplot as plt
 from matplotlib.dates import DateFormatter
 from datetime import datetime
 
+# header of the data
 dtype = [('date', 'U10'), ('hour', 'U8'),
          ('bcc', float), ('bba1', float), ('bba2', float),
          ('lux', float), ('lux_white', float),
          ('uva', float), ('uvb', float),
          ('tri1', float), ('tri2', float), ('tri3', float), ('tri4', float), ('tri5', float), ('tri6', float), ('tri7', float), ('tri8', float), ('tri9', float), ('tri10', float), ('tri11', float), ('tri12', float), ('tri13', float), ('tri14', float), ('tri15', float), ('tri16', float), ('tri17', float), ('tri18', float), ('tri19', float), ('tri20', float),
          ('temp', float), ('press', float), ('hum', float)]
+#available days (actually, the average days where we have the 1440 points, i.e, a full day of data, with no-missing points)
 print("Choose a day:")
 print("October  : 17, 19, 20, 22, 23, 24, 26, 27, 28, 29, 31")
 print("November : 01, 02, 03, 04, 05, 06, 07, 08, 09, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19 ,20, 21, 22, 23, 24, 26, 27, 28, 29, 30")
@@ -22,10 +24,12 @@ print("December : 11, 16, 18,20, 21, 22, 23, 24, 25")
 print("January  : 02, 03, 04, 06, 07, 08, 09, 16, 17, 18, 19 ,20, 21, 22")
 day = str(input("YYMMDD: "))
 
+#read the data, and set the date time correct
 data = np.loadtxt(f"/path/to/the/avg/files/20{day}.txt", delimiter=',', dtype=dtype)
 datetime_str = [f"{date} {hour}" for date, hour in zip(data['date'], data['hour'])]
 hour_datetime = [datetime.strptime(date_str, '%Y-%m-%d %H:%M:%S') for date_str in datetime_str]
 
+#then we need to choose a sensor: ir for the sky temperature; uv for the uv sensors; triad for the 18 channels spectrometer; bme for the ambient sensor
 print("Choose a sensor: \nir  | uv | triad | bme")
 sensor = str(input())
 
