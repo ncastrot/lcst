@@ -8,7 +8,7 @@ Then you can read my thesis in the "NicolasCastro_TESIS.pdf" file. Here I talk a
 
 In the "Codes" folder are "the most important" codes I used to obtain the results. You can edit them as you wish, and if you have any doubt, please do not hesitate to contact me.
 
-##########################################################################################################################
+##########################################
 
 To download the data from the lcst, we need to have access to the vnc of the instrument. To this, you need to talk to Esteban Donoso (edonoso@udec.cl). Once you are in the vnc-viewer, you can send the files to your notebook from "home/pi/data/file.txt". 
 
