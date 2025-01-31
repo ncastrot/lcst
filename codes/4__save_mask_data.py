@@ -22,7 +22,7 @@ lcst_files = glob.glob(lcst_folder + "*.txt")
 # set an array of dates of the usefull data in format mmdd
 dates = ["1017", "1019", "1020","1024", "1031", "1101","1102", "1103", "1104","1106", "1107", "1108"]
 
-# empty arrays for fulfill later
+# empty arrays to be filled later
 data_apex, data_lcst = [], []
 apex_bcc, lcst_bcc = [], []
 apex_bba, lcst_bba = [], []
