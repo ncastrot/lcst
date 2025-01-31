@@ -17,10 +17,10 @@ from sklearn.metrics import r2_score, mean_squared_error, mean_absolute_error
 dtype1 = [('date', 'U10'), ('hour', 'U8'), ('pwv', float), ('hum', float), ('press', float), ('temp', float)]
 dtype2 = [('date', 'U10'), ('hour', 'U8'), ('bcc', float), ('bba1', float), ('bba2', float), ('lux', float), ('lux_white', float), ('uva', float), ('uvb', float), ('t1', float), ('t2', float), ('t3', float), ('t4', float), ('t5', float), ('t6', float), ('t7', float), ('t8', float), ('t9', float), ('t10', float), ('t11', float), ('t12', float), ('t13', float), ('t14', float), ('t15', float), ('t16', float), ('t17', float), ('t18', float), ('t19', float), ('t20', float), ('temp', float), ('press', float), ('hum', float)]
 
-apex_bcc = np.loadtxt('/home/usuario/Documentos/Universidad/2024/10Semestre/TesisI/apex/data_mask/apex_bcc.txt', delimiter=',', dtype=dtype1)
-apex_bba = np.loadtxt('/home/usuario/Documentos/Universidad/2024/10Semestre/TesisI/apex/data_mask/apex_bba.txt', delimiter=',', dtype=dtype1)
-lcst_bcc = np.loadtxt('/home/usuario/Documentos/Universidad/2024/10Semestre/TesisI/apex/data_mask/lcst_bcc.txt', delimiter=',', dtype=dtype2)
-lcst_bba = np.loadtxt('/home/usuario/Documentos/Universidad/2024/10Semestre/TesisI/apex/data_mask/lcst_bba.txt', delimiter=',', dtype=dtype2)
+apex_bcc = np.loadtxt('/path/to/the/file/apex_bcc.txt', delimiter=',', dtype=dtype1)
+apex_bba = np.loadtxt('/path/to/the/file/apex_bba.txt', delimiter=',', dtype=dtype1)
+lcst_bcc = np.loadtxt('/path/to/the/file/lcst_bcc.txt', delimiter=',', dtype=dtype2)
+lcst_bba = np.loadtxt('/path/to/the/file/lcst_bba.txt', delimiter=',', dtype=dtype2)
 
 bcc, bba1, bba2  = lcst_bcc['bcc']/100, lcst_bba['bba1']/100, lcst_bba['bba2']/100
 pwv_bcc, pwv_bba = apex_bcc['pwv'], apex_bba['pwv']
