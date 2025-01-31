@@ -34,3 +34,4 @@ data_minute_avg['time'] = data_minute_avg['datetime'].dt.time
 data_minute_avg = data_minute_avg[['date', 'time', 'bcc', 'bba1', 'bba2', 'lux', 'lux_white', 'uva', 'uvb', 't1', 't2','t3', 't4','t5', 't6','t7', 't8','t9', 't10','t11', 't12','t13', 't14','t15', 't16','t17', 't18','t19', 't20', 'temp', 'press', 'hum']]
 
 data_minute_avg.to_csv(f"/path/to/the/average/files/{files}", index=False, header=False, sep=',')
+
