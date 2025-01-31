@@ -1,6 +1,6 @@
 #########################################################################
-# when you download the csv files from the meteoapex page, you create a #
-# .txt file in the same format of the lcst files                        #
+# when you download the csv files from the meteoapex page, you can      #
+# create a .txt file in the same format of the lcst files               #
 #########################################################################
 
 import csv
