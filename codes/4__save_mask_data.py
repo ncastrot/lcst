@@ -9,7 +9,6 @@ import glob
 
 # dtype for apex data and lcst
 dtype1 = [('date', 'U10'), ('hour', 'U8'), ('pwv', float), ('hum', float), ('press', float), ('temp', float)]
-
 dtype2 = [('date', 'U10'), ('hour', 'U8'), ('bcc', float), ('bba1', float), ('bba2', float), ('lux', float), ('lux_white', float), ('uva', float), ('uvb', float), ('t1', float), ('t2', float), ('t3', float), ('t4', float), ('t5', float), ('t6', float), ('t7', float), ('t8', float), ('t9', float), ('t10', float), ('t11', float), ('t12', float), ('t13', float), ('t14', float), ('t15', float), ('t16', float), ('t17', float), ('t18', float), ('t19', float), ('t20', float), ('temp', float), ('press', float), ('hum', float)]
 
 # the folders where we have the avg and usefull data
@@ -35,7 +34,7 @@ for apex_file, lcst_file in zip(apex_files, lcst_files):
     hour_datetime = [datetime.strptime(date_str, '%Y-%m-%d %H:%M:%S') for date_str in datetime_str]
     time = np.array(hour_datetime)
 
-    # mask1 for the bcc sensor: delete the hours when the sun passes through the 35° fov of the sensor
+    # mask1 for the bcc sensor: delete the hours when the sun passes through the 35° fov of the sensor. we delete between the 13:10 to 18:30
     mask1 = [i for i, dt in enumerate(time)
             if dt.strftime('%m%d') in dates and not (
                 (dt.hour == 13 and dt.minute >=10) or
@@ -43,7 +42,7 @@ for apex_file, lcst_file in zip(apex_files, lcst_files):
                 (dt.hour == 18 and dt.minute <30)
                 )]
 
-    # mask2 for the bba sensor: delete the hours when the sun passes through the 75° fov of the sensor
+    # mask2 for the bba sensor: delete the hours when the sun passes through the 75° fov of the sensor. we delete between the 11:05 to 22:30
     mask2 = [i for i, dt in enumerate(time)
             if dt.strftime('%m%d') in dates and not (
                 (dt.hour == 11 and dt.minute >=5) or
