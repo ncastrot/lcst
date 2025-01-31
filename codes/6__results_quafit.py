@@ -2,7 +2,8 @@
 # to obtain the results by fitting an quadratic relationship between    #
 # the pwv and the infrared sky temperature                              #
 # this is (almost) exactly the same as 5__results_expfit.py, but        #
-#changing the equations to be fitted. to more detailed code, see 5__.py #
+# changing the equations to be fitted. to more detailed code, see       #
+# 5__results_expfit.py                                                  #
 #########################################################################
 
 import numpy as np
@@ -13,7 +14,6 @@ from scipy.optimize import curve_fit
 from scipy.stats import pearsonr
 from sklearn.metrics import r2_score, mean_squared_error, mean_absolute_error
 
-print(50*'-')
 dtype1 = [('date', 'U10'), ('hour', 'U8'), ('pwv', float), ('hum', float), ('press', float), ('temp', float)]
 dtype2 = [('date', 'U10'), ('hour', 'U8'), ('bcc', float), ('bba1', float), ('bba2', float), ('lux', float), ('lux_white', float), ('uva', float), ('uvb', float), ('t1', float), ('t2', float), ('t3', float), ('t4', float), ('t5', float), ('t6', float), ('t7', float), ('t8', float), ('t9', float), ('t10', float), ('t11', float), ('t12', float), ('t13', float), ('t14', float), ('t15', float), ('t16', float), ('t17', float), ('t18', float), ('t19', float), ('t20', float), ('temp', float), ('press', float), ('hum', float)]
 
@@ -22,7 +22,7 @@ apex_bba = np.loadtxt('/home/usuario/Documentos/Universidad/2024/10Semestre/Tesi
 lcst_bcc = np.loadtxt('/home/usuario/Documentos/Universidad/2024/10Semestre/TesisI/apex/data_mask/lcst_bcc.txt', delimiter=',', dtype=dtype2)
 lcst_bba = np.loadtxt('/home/usuario/Documentos/Universidad/2024/10Semestre/TesisI/apex/data_mask/lcst_bba.txt', delimiter=',', dtype=dtype2)
 
-bcc,bba1,bba2 = lcst_bcc['bcc']/100, lcst_bba['bba1']/100, lcst_bba['bba2']/100
+bcc, bba1, bba2  = lcst_bcc['bcc']/100, lcst_bba['bba1']/100, lcst_bba['bba2']/100
 pwv_bcc, pwv_bba = apex_bcc['pwv'], apex_bba['pwv']
 
 def parabola(x,p,q,r):
@@ -37,6 +37,7 @@ def metrics(y_t, y_p1):
     rmse1 = np.sqrt(mean_squared_error(y_t, y_p1))
     mae1  = mean_absolute_error(y_t, y_p1)
     std1  = np.std(y_p1)
+    
     quad  = np.array([pr1,r21,rmse1,mae1,std1])
     return quad
 
