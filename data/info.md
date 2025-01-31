@@ -4,12 +4,17 @@ lcst.zip is the data from the vnc of the instrument in the apex-location. To the
 it also has been processed, replacing the " " with ",", but it has not been averaged each one minute.
 
 the followings days have no data from the lcst:
+
 2024: 1125, 1202-1209, 1214
+
 2025: 0105, 0110-0115
 
 the followings days have no data from the meteoapex:
+
 2024: 1223-1225 (no pwv data), 1226-1231
+
 2025: 0102-0122 (no pwv data) ,0123-0130
 
 the following days are incomplete:
+
 2024: , 1109, 1110, 1115, 1122, 1123, 1124
