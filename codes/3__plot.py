@@ -16,6 +16,7 @@ dtype = [('date', 'U10'), ('hour', 'U8'),
          ('uva', float), ('uvb', float),
          ('tri1', float), ('tri2', float), ('tri3', float), ('tri4', float), ('tri5', float), ('tri6', float), ('tri7', float), ('tri8', float), ('tri9', float), ('tri10', float), ('tri11', float), ('tri12', float), ('tri13', float), ('tri14', float), ('tri15', float), ('tri16', float), ('tri17', float), ('tri18', float), ('tri19', float), ('tri20', float),
          ('temp', float), ('press', float), ('hum', float)]
+
 #available days (actually, the average days where we have the 1440 points, i.e, a full day of data, with no-missing points)
 print("Choose a day:")
 print("October  : 17, 19, 20, 22, 23, 24, 26, 27, 28, 29, 31")
@@ -33,6 +34,7 @@ hour_datetime = [datetime.strptime(date_str, '%Y-%m-%d %H:%M:%S') for date_str i
 print("Choose a sensor: \nir  | uv | triad | bme")
 sensor = str(input())
 
+# the ir sensor has *100 the temperature values, so we need to divide it to have °C
 if sensor == 'ir':
     fig, ax = plt.subplots(figsize=(16,16))
     date_formatter = DateFormatter('%Y-%m-%d\n%H:%M')
@@ -42,7 +44,7 @@ if sensor == 'ir':
     ax.set_xlabel("Date [UTC]")
     ax.set_ylabel("Temperature [C]")
     ax.legend()
-    plt.show()
+
     #---------------------------------------------------------------------#
     fig, ax = plt.subplots(figsize=(16,16))
     date_formatter = DateFormatter('%Y-%m-%d\n%H:%M')
@@ -52,7 +54,7 @@ if sensor == 'ir':
     ax.set_xlabel("Date [UTC]")
     ax.set_ylabel("Temperature [C]")
     ax.legend()
-    plt.show()
+
     #---------------------------------------------------------------------#
     fig, ax = plt.subplots(figsize=(16,16))
     date_formatter = DateFormatter('%Y-%m-%d\n%H:%M')
@@ -73,7 +75,7 @@ if sensor == 'uv':
     ax.set_xlabel("Date [UTC]")
     ax.set_ylabel("~[$\\mu$W/cm2]")
     ax.legend()
-    plt.show()
+
     #---------------------------------------------------------------------#
     fig, ax = plt.subplots(figsize=(16,16))
     date_formatter = DateFormatter('%Y-%m-%d\n%H:%M')
@@ -94,28 +96,29 @@ if sensor == 'bme':
     ax.set_xlabel("Date [UTC]")
     ax.set_ylabel("Temperature [C]")
     ax.legend()
-    plt.show()
+
     #---------------------------------------------------------------------#
     fig, ax = plt.subplots(figsize=(16,16))
     date_formatter = DateFormatter('%Y-%m-%d\n%H:%M')
     ax.xaxis.set_major_formatter(date_formatter)
 
-    ax.plot(hour_datetime, data['hum']/100, 'b-', label='UV B')
+    ax.plot(hour_datetime, data['hum']/100, 'b-', label='Humidity')
     ax.set_xlabel("Date [UTC]")
     ax.set_ylabel("Humidity [%]")
     ax.legend()
-    plt.show()
+
     #---------------------------------------------------------------------#
     fig, ax = plt.subplots(figsize=(16,16))
     date_formatter = DateFormatter('%Y-%m-%d\n%H:%M')
     ax.xaxis.set_major_formatter(date_formatter)
 
-    ax.plot(hour_datetime, data['press'], 'b-', label='UV B')
+    ax.plot(hour_datetime, data['press'], 'b-', label='Pressure')
     ax.set_xlabel("Date [UTC]")
     ax.set_ylabel("Pressure [kPa]")
     ax.legend()
     plt.show()
 
+# the triad are 18 channels, 6 for each chip, so we make multiple plots to see the data
 if sensor == 'triad':
     fig, ax = plt.subplots(2,3, figsize=(18,18))
     date_formatter = DateFormatter('%Y-%m-%d\n%H:%M')
