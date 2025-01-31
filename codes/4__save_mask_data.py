@@ -67,10 +67,10 @@ apex_bcc, lcst_bcc = np.array(apex_bcc), np.array(lcst_bcc)
 apex_bba, lcst_bba = np.array(apex_bba), np.array(lcst_bba)
 
 # save the data into .txt files: for the full, mask1 and mask2 data
-np.savetxt('/path/tho/the/file/data_apex.txt', data_apex, fmt='%s,%s,%.2f,%.2f,%.2f,%.2f', delimiter=',')
-np.savetxt('/path/tho/the/file/apex_bcc.txt', apex_bcc, fmt='%s,%s,%.2f,%.2f,%.2f,%.2f', delimiter=',')
-np.savetxt('/path/tho/the/file/apex_bba.txt', apex_bba, fmt='%s,%s,%.2f,%.2f,%.2f,%.2f', delimiter=',')
+np.savetxt('/path/to/the/file/data_apex.txt', data_apex, fmt='%s,%s,%.2f,%.2f,%.2f,%.2f', delimiter=',')
+np.savetxt('/path/to/the/file/apex_bcc.txt', apex_bcc, fmt='%s,%s,%.2f,%.2f,%.2f,%.2f', delimiter=',')
+np.savetxt('/path/to/the/file/apex_bba.txt', apex_bba, fmt='%s,%s,%.2f,%.2f,%.2f,%.2f', delimiter=',')
 
-np.savetxt('/path/tho/the/file/data_lcst.txt', data_lcst, fmt='%s,%s,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f', delimiter=',')
-np.savetxt('/path/tho/the/file/lcst_bcc.txt', lcst_bcc, fmt='%s,%s,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f', delimiter=',')
-np.savetxt('/path/tho/the/file/lcst_bba.txt', lcst_bba, fmt='%s,%s,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f', delimiter=',')
+np.savetxt('/path/to/the/file/data_lcst.txt', data_lcst, fmt='%s,%s,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f', delimiter=',')
+np.savetxt('/path/to/the/file/lcst_bcc.txt', lcst_bcc, fmt='%s,%s,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f', delimiter=',')
+np.savetxt('/path/to/the/file/lcst_bba.txt', lcst_bba, fmt='%s,%s,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f', delimiter=',')
