@@ -101,7 +101,8 @@ if sensor == 'bcc':
         bin_index = np.digitize(i, bins) - 1
         if 0 <= bin_index < len(stds):
             ax1.errorbar(i, expon(i, a, b, c, d), yerr=stds[bin_index], color='red', fmt='x', ecolor='black', capsize=7, lw=4)
-            ax1.text(i-0.33, 0, f"$\\sigma$={stds[bin_index]:.3f}", fontsize=10)
+            ax1.text(i-0.3, 0, f"{stds[bin_index]:.3f}", fontsize=14)
+    ax1.text(-62.05, 0, "$\\sigma$", fontsize=20)
     for i in np.arange(min(bcc), max(bcc)+1, step):
         ax1.vlines(i,-0.3,0.1, color='blue', linestyle='--')
 
@@ -140,10 +141,10 @@ if sensor == 'bcc':
     ax1.set_ylim(min(pwv_bcc)-0.1,max(pwv_bcc)+0.1)
     ax1.legend(fontsize=16)
 
-    for i in np.arange((2*min(bcc)+step)/2, (max(bcc)), step):
+    for i in np.arange(min(bcc)+step/2, (max(bcc)), step):
         bin_index = np.digitize(i, bins) - 1
         if 0 <= bin_index < len(stds):
-            ax1.errorbar(expon(i,a,b,c,d), expon(i,a,b,c,d)*m1 + b1, yerr=stds[bin_index], color='red', fmt='x', ecolor='black', capsize=7, lw=4)
+            ax1.errorbar(expon(i,a,b,c,d), expon(i,a,b,c,d)*m1 +b1, yerr=stds[bin_index], color='red', fmt='x', ecolor='black', capsize=7, lw=4)
 
 
     ax1.text(min(pwv_bcc), 1.7, f"r={metric[0]:.4f}")
@@ -213,7 +214,8 @@ if sensor == 'bba':
         bin_index = np.digitize(i, bins) - 1
         if 0 <= bin_index < len(stds):
             ax1.errorbar(i, expon(i, a, b, c, d), yerr=stds[bin_index], color='red', fmt='x', ecolor='black', capsize=7, lw=4)
-            ax1.text(i-0.33, 0, f"$\\sigma$={stds[bin_index]:.3f}", fontsize=10)
+            ax1.text(i-0.33, 0, f"{stds[bin_index]:.3f}", fontsize=14)
+    ax1.text(-63.2, 0, "$\\sigma$", fontsize=20)
     for i in np.arange(min(bba1), max(bba1)+1, step):
         ax1.vlines(i,-0.3,0.1, color='blue', linestyle='--')
 
@@ -241,7 +243,7 @@ if sensor == 'bba':
     ax1.plot(x,x,'k--', alpha=0.5, label='Ratio 1:1')
     ax1.plot(x,x*m1 + b1, 'r-', label=f"m={m1:.4f} \n$\\sigma$ ={np.std(pred_exp):.4f}")
 
-    for i in np.arange((2*min(bba1)+step)/2, (max(bba1)), step):
+    for i in np.arange(min(bcc)+step/2, (max(bcc)), step):
         bin_index = np.digitize(i, bins) - 1
         if 0 <= bin_index < len(stds):
             ax1.errorbar(expon(i,a,b,c,d), expon(i,a,b,c,d)*m1 + b1, yerr=stds[bin_index], color='red', fmt='x', ecolor='black', capsize=7, lw=4)
@@ -317,7 +319,8 @@ if sensor == 'bba':
         bin_index = np.digitize(i, bins) - 1
         if 0 <= bin_index < len(stds):
             ax1.errorbar(i, expon(i, a, b, c, d), yerr=stds[bin_index], color='red', fmt='x', ecolor='black', capsize=7, lw=4)
-            ax1.text(i-0.33, 0, f"$\\sigma$={stds[bin_index]:.3f}", fontsize=10)
+            ax1.text(i-0.33, 0, f"{stds[bin_index]:.3f}", fontsize=14)
+    ax1.text(-63.2, 0, "$\\sigma$", fontsize=20)
     for i in np.arange(min(bba2), max(bba2)+1, step):
         ax1.vlines(i,-0.3,0.1, color='blue', linestyle='--')
 
@@ -329,6 +332,7 @@ if sensor == 'bba':
     ax2.set_xlabel("CePIA Sky Temperature [°C]", fontsize=20)
     ax2.set_xlim(min(bba2)-0.5,max(bba2)+0.5)
     ax2.set_ylim(min(pwv_bba-pred_exp)-0.1,max(pwv_bba-pred_exp)+0.1)
+    
 
     x=np.linspace(min(pwv_bba)-2, max(pwv_bba)+2, len(pwv_bba))
     fig, (ax1,ax2) = plt.subplots(2,1, figsize=(18,16), sharex=True, gridspec_kw={'height_ratios':[4,1], 'hspace':0})
@@ -342,7 +346,7 @@ if sensor == 'bba':
     ax1.set_ylim(min(pwv_bba)-0.1,max(pwv_bba)+0.1)
     ax1.legend(fontsize=16)
 
-    for i in np.arange((2*min(bba2)+step)/2, (max(bba2)), step):
+    for i in np.arange(min(bcc)+step/2, (max(bcc)), step):
         bin_index = np.digitize(i, bins) - 1
         if 0 <= bin_index < len(stds):
             ax1.errorbar(expon(i,a,b,c,d), expon(i,a,b,c,d)*m1 + b1, yerr=stds[bin_index], color='red', fmt='x', ecolor='black', capsize=7, lw=4)
