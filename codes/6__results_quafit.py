@@ -92,7 +92,8 @@ if sensor == 'bcc':
         bin_index = np.digitize(i, bins) - 1
         if 0 <= bin_index < len(stds):
             ax1.errorbar(i, parabola(i, p, q, r), yerr=stds[bin_index], color='red', fmt='x', ecolor='black', capsize=7, lw=4)
-            ax1.text(i-0.33, 0, f"$\\sigma$={stds[bin_index]:.3f}", fontsize=10)
+            ax1.text(i-0.3, 0, f"{stds[bin_index]:.3f}", fontsize=14)
+    ax1.text(-62.05, 0, "$\\sigma$", fontsize=20)
     for i in np.arange(min(bcc), max(bcc)+1, step):
         ax1.vlines(i,-0.3,0.1, color='blue', linestyle='--')
 
@@ -118,11 +119,11 @@ if sensor == 'bcc':
     ax1.set_ylim(min(pwv_bcc)-0.1,max(pwv_bcc)+0.1)
     ax1.legend(fontsize=16)
 
-    for i in np.arange((2*min(bcc)+step)/2, (max(bcc)), step):
+    for i in np.arange(min(bcc)+step/2, (max(bcc)), step):
         bin_index = np.digitize(i, bins) - 1
         if 0 <= bin_index < len(stds):
             ax1.errorbar(parabola(i, p,q,r), parabola(i, p, q, r)*m2 + b2, yerr=stds[bin_index], color='red', fmt='x', ecolor='black', capsize=7, lw=4)
-
+            
 
     ax1.text(min(pwv_bcc), 1.7, f"r={metric[0]:.4f}")
     ax1.text(min(pwv_bcc), 1.6, f"R2={metric[1]:.4f}")
@@ -186,7 +187,8 @@ if sensor == 'bba':
         bin_index = np.digitize(i, bins) - 1
         if 0 <= bin_index < len(stds):
             ax1.errorbar(i, parabola(i, p, q, r), yerr=stds[bin_index], color='red', fmt='x', ecolor='black', capsize=7, lw=4)
-            ax1.text(i-0.33, 0, f"$\\sigma$={stds[bin_index]:.3f}", fontsize=10)
+            ax1.text(i-0.33, 0, f"{stds[bin_index]:.3f}", fontsize=14)
+    ax1.text(-63.2, 0, "$\\sigma$", fontsize=20)
     for i in np.arange(min(bba1), max(bba1)+1, step):
         ax1.vlines(i,-0.3,0.1, color='blue', linestyle='--')
 
@@ -211,11 +213,11 @@ if sensor == 'bba':
     ax1.set_ylim(min(pwv_bba)-0.1,max(pwv_bba)+0.1)
     ax1.legend(fontsize=16)
 
-    for i in np.arange((2*min(bba1)+step)/2, (max(bba1)), step):
+    for i in np.arange(min(bcc)+step/2, (max(bcc)), step):
         bin_index = np.digitize(i, bins) - 1
         if 0 <= bin_index < len(stds):
             ax1.errorbar(parabola(i, p,q,r), parabola(i, p, q, r)*m2 + b2, yerr=stds[bin_index], color='red', fmt='x', ecolor='black', capsize=7, lw=4)
-
+            
 
     ax1.text(min(pwv_bba), 1.7, f"r={metric[0]:.4f}")
     ax1.text(min(pwv_bba), 1.6, f"R2={metric[1]:.4f}")
@@ -276,7 +278,8 @@ if sensor == 'bba':
         bin_index = np.digitize(i, bins) - 1
         if 0 <= bin_index < len(stds):
             ax1.errorbar(i, parabola(i, p, q, r), yerr=stds[bin_index], color='red', fmt='x', ecolor='black', capsize=7, lw=4)
-            ax1.text(i-0.33, 0, f"$\\sigma$={stds[bin_index]:.3f}", fontsize=10)
+            ax1.text(i-0.33, 0, f"{stds[bin_index]:.3f}", fontsize=14)
+    ax1.text(-63.0, 0, "$\\sigma$", fontsize=20)
     for i in np.arange(min(bba2), max(bba2)+1, step):
         ax1.vlines(i,-0.3,0.1, color='blue', linestyle='--')
 
@@ -303,11 +306,11 @@ if sensor == 'bba':
     ax1.set_ylim(min(pwv_bba)-0.1,max(pwv_bba)+0.1)
     ax1.legend(fontsize=16)
 
-    for i in np.arange((2*min(bba2)+step)/2, (max(bba2)), step):
+    for i in np.arange(min(bcc)+step/2, (max(bcc)), step):
         bin_index = np.digitize(i, bins) - 1
         if 0 <= bin_index < len(stds):
             ax1.errorbar(parabola(i, p,q,r), parabola(i, p, q, r)*m2 + b2, yerr=stds[bin_index], color='red', fmt='x', ecolor='black', capsize=7, lw=4)
-
+            
 
     ax1.text(min(pwv_bba), 1.7, f"r={metric[0]:.4f}")
     ax1.text(min(pwv_bba), 1.6, f"R2={metric[1]:.4f}")
